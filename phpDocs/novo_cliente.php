@@ -9,7 +9,7 @@
 
 <body>
     <?php
-    define('_BASE', $_SERVER['DOCUMENT_ROOT'] . '/loja/');
+    define('_BASE', $_SERVER['DOCUMENT_ROOT'] . '/clube-do-livro/');
     require_once _BASE . 'phpDocs/conexao.php';
     require_once _BASE . 'phpDocs/cliente.php';
     require_once _BASE . 'dao/daoCliente.php';
