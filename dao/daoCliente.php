@@ -64,19 +64,15 @@ class DaoCliente
         $list = $pst -> fetchAll(PDO::FETCH_ASSOC);
         return $list;
     }
-    // public function Edita (cliente $cliente)
-    // {
-    //     $sql = 'update Cliente set nome=?, cpf =?, email=? where id_cliente= ?';
-    //     $pst = Conexao::getPreparedStatement($sql);
-    //     $pst -> bindValue(1, $cliente->getNome());
-    //     $pst -> bindValue(2, $cliente->getcpf());
-    //     $pst -> bindValue(3, $cliente->getEmail());
-    //     $pst -> bindValue(4, $cliente->getId_cliente());
 
-    //     if ($pst -> execute ()) {
-    //         return true;
-    //     }   else {
-    //         return false;
-    //     }
-    // }
+    public function VerificaLogin (Cliente $cliente)
+    {
+        $list = [];
+        $pst = Conexao::getPreparedStatement('select * from Cliente where email = ?');
+        $pst -> bindValue(1, $cliente->getEmail());
+        $pst ->execute();
+        $list = $pst -> fetchAll(PDO::FETCH_ASSOC);
+        return $list;
+    }
+
 }
