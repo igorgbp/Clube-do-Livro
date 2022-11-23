@@ -1,4 +1,4 @@
-<?php    define('_BASE', $_SERVER['DOCUMENT_ROOT'] . '/clube-do-livro/');
+<?php    define('_BASE', $_SERVER['DOCUMENT_ROOT'] . '/loja/');
     require_once _BASE . 'phpDocs/conexao.php';
     require_once _BASE . 'phpDocs/cliente.php';
     require_once _BASE . 'dao/daoCliente.php';

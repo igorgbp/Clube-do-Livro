@@ -3,7 +3,7 @@ class Conexao
 {
     private static $dsn = 'mysql:host=localhost;dbname=clube_do_livro;port=3306';
     private static $usuario = 'root';
-    private static $senha = '';
+    private static $senha = 'root';
     private static $conexao = null;
 
     public static function getConexao(): PDO
