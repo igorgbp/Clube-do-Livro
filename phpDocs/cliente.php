@@ -3,7 +3,6 @@
 class Cliente {
     private $id_cliente;
     private $nome;
-    private $cpf;
     private $email;
     private $senha;
 
@@ -51,28 +50,6 @@ class Cliente {
 
         return $this;
     }
-
-
-
-
-
-    
-    public function getCpf()
-    {
-        return $this->cpf;
-    }
-
-
-    public function setCpf($cpf)
-    {
-        $this->cpf = $cpf;
-
-        return $this;
-    }
-
-
-
-
     
     public function getSenha()
     {

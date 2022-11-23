@@ -5,14 +5,11 @@
 
     // $id_cliente = filter_input(INPUT_POST, 'id_cliente');
     $nome = filter_input(INPUT_POST, 'nome');
-    $cpf = filter_input(INPUT_POST, 'cpf');
     $email = filter_input(INPUT_POST, 'email');
     $senha = filter_input(INPUT_POST, 'senha');
     // echo ($id_cliente);
     // echo ('<br>');
     echo ($nome);
-    echo ('<br>');
-    echo ($cpf);
     echo ('<br>');
     echo ($email);
     echo ('<br>');
@@ -22,7 +19,6 @@
     $cliente = new Cliente();
     // $u->setId_cliente($id_cliente);
     $cliente->setNome($nome);
-    $cliente->setCpf($cpf);
     $cliente->setEmail($email);
     $cliente->setSenha($senha);
 
@@ -33,6 +29,3 @@
     } else {
     echo 'erro ao cadastrar';
     }
-
-
-?>
