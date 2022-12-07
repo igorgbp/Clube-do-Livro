@@ -1,6 +1,6 @@
 <?php
 
-define('_BASE', $_SERVER['DOCUMENT_ROOT'] . '/loja/');
+define('_BASE', $_SERVER['DOCUMENT_ROOT'] . '/Clube-do-Livro/');
     require_once _BASE . 'phpDocs/conexao.php';
     require_once _BASE . 'phpDocs/cliente.php';
     require_once _BASE . 'dao/daoCliente.php';

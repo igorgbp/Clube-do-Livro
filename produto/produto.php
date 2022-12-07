@@ -1,6 +1,6 @@
 <?php
 
-class Cliente {
+class Produto {
     private $id_produto;
     private $nome;
     private $descricao;

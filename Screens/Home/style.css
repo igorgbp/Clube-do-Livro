@@ -10,7 +10,7 @@ body {
     background-color: #2a2a2a;
 }
 p {
-    color: white;
+    color: red;
 }
 .up {
     background-color: #e76a6a;
@@ -19,7 +19,7 @@ p {
     text-align: center;
 }
 .down {
-    background-color: rgb(44, 41, 51);
+    background-color: #2a2a2a;
     height: 100%;
     width: 100%;
 }
@@ -31,8 +31,18 @@ p {
 .card {
     background-color: white;
     width: 500px;
+    height: 200px;
     border-radius: 2ch;
     text-align: center;
     justify-content: center;
+}
 
+.name_product{
+    font-weight: bold;
+    font-size:x-large;
+}
+
+.description_product{
+    font-weight: 300;
+    font-size: medium;
 }
