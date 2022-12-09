@@ -1,33 +1,6 @@
 <?php
-class Conexao
-{
-    private static $dsn = 'mysql:host=127.0.0.1;dbname=clube_do_livro;port=3306';
-    private static $usuario = 'root';
-    private static $senha = '321321321';
-    private static $conexao = null;
+ini_set('error_reporting', E_ALL); // mesmo resultado de: error_reporting(E_ALL);
+ini_set('display_errors', 1);
+$conn = mysqli_connect('localhost:3306','root','321321321','shop_db') or die('Falha na conexão');
 
-    public static function getConexao(): PDO
-    {
-        if (Conexao::$conexao == null) {
-            try {
-                Conexao::$conexao = new PDO(Conexao::$dsn, Conexao::$usuario, Conexao::$senha);
-            } catch (PDOException $e) {
-                echo $e->getMessage();
-            }
-        }
-        return Conexao::$conexao;
-    }
-
-    public static function getPreparedStatement($sql): PDOStatement
-    {
-        $pst = null;
-        if (Conexao::getConexao() != null) {
-            try {
-                $pst = Conexao::$conexao->prepare($sql);
-            } catch (PDOException $e) {
-                echo $e->getMessage();
-            }
-        }
-        return $pst;
-    }
-}
+?>
