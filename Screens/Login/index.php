@@ -29,7 +29,7 @@ if(isset($_POST['submit'])){
          $_SESSION['admin_id'] = $row['id'];
         //  alert('deubom')
 
-         header('location:admin_page.php');
+         header('location:../../Admin/admin_page.php');
 
       }elseif($row['user_type'] == 'user'){
 

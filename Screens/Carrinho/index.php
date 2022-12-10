@@ -1,13 +1,13 @@
 <?php
 
-@include 'config.php';
+@include '../../phpDocs/conexao.php';
 
 session_start();
 
 $user_id = $_SESSION['user_id'];
 
 if(!isset($user_id)){
-   header('location:login.php');
+   header('location:../Login/index.php');
 };
 
 if(isset($_POST['order'])){
@@ -60,16 +60,16 @@ if(isset($_POST['order'])){
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
    <!-- custom admin css file link  -->
-   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="../../css/style.css">
 
 </head>
 <body>
    
-<?php @include 'header.php'; ?>
+<?php @include '../../Header/index.php'; ?>
 
 <section class="heading">
-    <h3>checkout order</h3>
-    <p> <a href="home.php">home</a> / checkout </p>
+    <h3>carrinho de compras</h3>
+    <!-- <p> <a href="home.php">home</a> / checkout </p> -->
 </section>
 
 <section class="display-order">
@@ -85,7 +85,7 @@ if(isset($_POST['order'])){
     <?php
         }
         }else{
-            echo '<p class="empty">your cart is empty</p>';
+            echo '<p class="empty">seu carrinho está vazio</p>';
         }
     ?>
     <div class="grand-total">grand total : <span>$<?php echo $grand_total; ?>/-</span></div>
@@ -99,19 +99,19 @@ if(isset($_POST['order'])){
 
         <div class="flex">
             <div class="inputBox">
-                <span>your name :</span>
+                <span>Seu nome</span>
                 <input type="text" name="name" placeholder="enter your name">
             </div>
             <div class="inputBox">
-                <span>your number :</span>
+                <span>Seu número</span>
                 <input type="number" name="number" min="0" placeholder="enter your number">
             </div>
             <div class="inputBox">
-                <span>your email :</span>
+                <span>Seu email</span>
                 <input type="email" name="email" placeholder="enter your email">
             </div>
             <div class="inputBox">
-                <span>payment method :</span>
+                <span>Meio de pagamento</span>
                 <select name="method">
                     <option value="cash on delivery">cash on delivery</option>
                     <option value="credit card">credit card</option>
@@ -119,7 +119,8 @@ if(isset($_POST['order'])){
                     <option value="paytm">paytm</option>
                 </select>
             </div>
-            <div class="inputBox">
+            <div class='flex'>
+        <div class="inputBox">
                 <span>address line 01 :</span>
                 <input type="text" name="flat" placeholder="e.g. flat no.">
             </div>
@@ -128,11 +129,11 @@ if(isset($_POST['order'])){
                 <input type="text" name="street" placeholder="e.g.  streen name">
             </div>
             <div class="inputBox">
-                <span>city :</span>
+                <span>Cidade</span>
                 <input type="text" name="city" placeholder="e.g. mumbai">
             </div>
             <div class="inputBox">
-                <span>state :</span>
+                <span>Estado</span>
                 <input type="text" name="state" placeholder="e.g. maharashtra">
             </div>
             <div class="inputBox">
@@ -144,6 +145,10 @@ if(isset($_POST['order'])){
                 <input type="number" min="0" name="pin_code" placeholder="e.g. 123456">
             </div>
         </div>
+            
+        </div>
+
+        
 
         <input type="submit" name="order" value="order now" class="btn">
 
