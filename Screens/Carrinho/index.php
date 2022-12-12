@@ -71,7 +71,6 @@ if(isset($_POST['order'])){
 
 <section class="heading">
     <h3>carrinho de compras</h3>
-    <!-- <p> <a href="home.php">home</a> / checkout </p> -->
 </section>
 
 <section class="display-order">
@@ -83,14 +82,14 @@ if(isset($_POST['order'])){
             $total_price = ($fetch_cart['price'] * $fetch_cart['quantity']);
             $grand_total += $total_price;
     ?>    
-    <p> <?php echo $fetch_cart['name'] ?> <span>(<?php echo '$'.$fetch_cart['price'].'/-'.' x '.$fetch_cart['quantity']  ?>)</span> </p>
+    <p> <?php echo $fetch_cart['name'] ?> <span>(<?php echo 'R$ '.$fetch_cart['price'].' x'.$fetch_cart['quantity']  ?>)</span> </p>
     <?php
         }
         }else{
             echo '<p class="empty">seu carrinho está vazio</p>';
         }
     ?>
-    <div class="grand-total">Valor total: <span>R$<?php echo $grand_total; ?></span></div>
+    <div class="grand-total">Valor total: <span>R$ <?php echo $grand_total; ?></span></div>
 </section>
 
 <section class="checkout">
@@ -115,7 +114,7 @@ if(isset($_POST['order'])){
             <div class="inputBox">
                 <span>Meio de pagamento</span>
                 <select name="method">
-                    <option value="credit card">Cartão de crédito</option>
+                    <option value="cartao de credito">Cartão de crédito</option>
                     <option value="paypal">Paypal</option>
                     <option value="pix">Pix</option>
                 </select>
@@ -131,11 +130,11 @@ if(isset($_POST['order'])){
             </div>
             <div class="inputBox">
                 <span>Cidade</span>
-                <input type="text" name="cidade" placeholder="e.g. mumbai">
+                <input type="text" name="cidade" placeholder="Digite a Cidade">
             </div>
             <div class="inputBox">
                 <span>Estado</span>
-                <input type="text" name="estado" placeholder="e.g. maharashtra">
+                <input type="text" name="estado" placeholder="Digite o Estado">
             </div>
             <div class="inputBox">
                 <span>CEP</span>
@@ -147,7 +146,7 @@ if(isset($_POST['order'])){
 
         
 
-        <input type="submit" name="order" value="order now" class="btn">
+        <input type="submit" name="order" value="Finalizar pedido" class="btn">
 
     </form>
 
@@ -155,12 +154,7 @@ if(isset($_POST['order'])){
 
 
 
-
-
-
-<?php @include 'footer.php'; ?>
-
-<script src="js/script.js"></script>
+<script src="../../js/script.js"></script>
 
 </body>
 </html>

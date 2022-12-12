@@ -65,6 +65,7 @@ if(isset($_POST['submit'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../css/style.css">
 </head>
 
 <body>
@@ -75,7 +76,7 @@ if(isset($_POST['submit'])){
 
     <div class="center">
         <div class="pic">
-            <img src="../../assets/store_2.gif" class="image" sizes="contain">
+            <img src="../../images/store_2.gif" class="image" sizes="contain">
 
         </div>
         <div class="logindata">

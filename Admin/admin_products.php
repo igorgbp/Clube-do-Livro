@@ -24,16 +24,16 @@ if(isset($_POST['add_product'])){
    $select_product_name = mysqli_query($conn, "SELECT name FROM `products` WHERE name = '$name'") or die('query failed');
 
    if(mysqli_num_rows($select_product_name) > 0){
-      $message[] = 'product name already exist!';
+      $message[] = 'Já existe um livro com este nome';
    }else{
       $insert_product = mysqli_query($conn, "INSERT INTO `products`(name, details, price, image) VALUES('$name', '$details', '$price', '$image')") or die('query failed');
 
       if($insert_product){
          if($image_size > 2000000){
-            $message[] = 'image size is too large!';
+            $message[] = 'Imagem muito grande';
          }else{
             move_uploaded_file($image_tmp_name, $image_folter);
-            $message[] = 'product added successfully!';
+            $message[] = 'Livro adicionado com sucesso';
          }
       }
    }
@@ -77,12 +77,12 @@ if(isset($_GET['delete'])){
 <section class="add-products">
 
    <form action="" method="POST" enctype="multipart/form-data">
-      <h3>add new product</h3>
-      <input type="text" class="box" required placeholder="enter product name" name="name">
-      <input type="number" min="0" class="box" required placeholder="enter product price" name="price">
-      <textarea name="details" class="box" required placeholder="enter product details" cols="30" rows="10"></textarea>
+      <h3>Adicionar Livro</h3>
+      <input type="text" class="box" required placeholder="Digite o nome do livro" name="name">
+      <input type="number" min="0" class="box" required placeholder="Digite o preço" name="price">
+      <textarea name="details" class="box" required placeholder="Digite a descrição" cols="30" rows="10"></textarea>
       <input type="file" accept="image/jpg, image/jpeg, image/png" required class="box" name="image">
-      <input type="submit" value="add product" name="add_product" class="btn">
+      <input type="submit" value="Adicionar" name="add_product" class="btn">
    </form>
 
 </section>
@@ -102,12 +102,12 @@ if(isset($_GET['delete'])){
          <div class="name"><?php echo $fetch_products['name']; ?></div>
          <div class="details"><?php echo $fetch_products['details']; ?></div>
          <a href="admin_update_product.php?update=<?php echo $fetch_products['id']; ?>" class="option-btn">update</a>
-         <a href="admin_products.php?delete=<?php echo $fetch_products['id']; ?>" class="delete-btn" onclick="return confirm('delete this product?');">delete</a>
+         <a href="admin_products.php?delete=<?php echo $fetch_products['id']; ?>" class="delete-btn" onclick="return confirm('Deletar este livro?');">Deletar</a>
       </div>
       <?php
          }
       }else{
-         echo '<p class="empty">no products added yet!</p>';
+         echo '<p class="empty">Nenhum produto adicionado ainda</p>';
       }
       ?>
    </div>
@@ -126,7 +126,7 @@ if(isset($_GET['delete'])){
 
 
 
-<script src="js/admin_script.js"></script>
+<script src="../js/admin_script.js"></script>
 
 </body>
 </html>

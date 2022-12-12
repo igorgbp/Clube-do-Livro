@@ -51,12 +51,14 @@ if(isset($_POST['submit'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../css/style.css">
+
 </head>
 
 <body>
     <div class="center">
         <div class="pic">
-            <img src="../../assets/store.gif" class="image" sizes="contain">
+            <img src="../../images/store.gif" class="image" sizes="contain">
 
         </div>
         <div class="logindata">
@@ -74,11 +76,7 @@ if(isset($_POST['submit'])){
                     <span></span>
                     <label>Email</label>
                 </div>
-                <!-- <div class="txt_field">
-                    <input type="number" required name='cpf' id='cpf'>
-                    <span></span>
-                    <label>Cpf</label>
-                </div> -->
+
                 <div class="txt_field">
                     <input type="password" required name='pass' id='senha'>
                     <span></span>
@@ -94,7 +92,7 @@ if(isset($_POST['submit'])){
                     <input type="submit" value="Cadastre-se" name="submit">
                 </div>
                 <div class="signup_link">
-                    <a href="../Login/index.html">Voltar para Login</a>
+                    <a href="../Login/index.php">Voltar para Login</a>
                 </div>
                 <?php
 if(isset($message)){

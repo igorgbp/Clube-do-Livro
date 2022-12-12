@@ -24,12 +24,12 @@ if(isset($_POST['add_to_wishlist'])){
    $check_cart_numbers = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
 
    if(mysqli_num_rows($check_wishlist_numbers) > 0){
-       $message[] = 'Já adicionado na wishlist';
+       $message[] = 'Livro já está na wishlist';
    }elseif(mysqli_num_rows($check_cart_numbers) > 0){
-       $message[] = 'Já adicionado ao carrinho';
+       $message[] = 'Livro já está na wishlist';
    }else{
        mysqli_query($conn, "INSERT INTO `wishlist`(user_id, pid, name, price, image) VALUES('$user_id', '$product_id', '$product_name', '$product_price', '$product_image')") or die('query failed');
-       $message[] = 'Produto adicionado a wishlist';
+       $message[] = 'Livro adicionado a wishlist';
    }
 
 }
@@ -45,7 +45,7 @@ if(isset($_POST['add_to_cart'])){
    $check_cart_numbers = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
 
    if(mysqli_num_rows($check_cart_numbers) > 0){
-       $message[] = 'already added to cart';
+       $message[] = 'Livro já está no carrinho';
    }else{
 
        $check_wishlist_numbers = mysqli_query($conn, "SELECT * FROM `wishlist` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
@@ -55,7 +55,7 @@ if(isset($_POST['add_to_cart'])){
        }
 
        mysqli_query($conn, "INSERT INTO `cart`(user_id, pid, name, price, quantity, image) VALUES('$user_id', '$product_id', '$product_name', '$product_price', '$product_quantity', '$product_image')") or die('query failed');
-       $message[] = 'product added to cart';
+       $message[] = 'Livro adicionado ao carrinho';
    }
 
 }
@@ -88,7 +88,7 @@ if(isset($_POST['add_to_cart'])){
 
 </section>
 
-<section class="products">
+<section class="produtos">
 
    <h1 class="title">destaques</h1>
 
@@ -115,7 +115,7 @@ if(isset($_POST['add_to_cart'])){
       <?php
          }
       }else{
-         echo '<p class="empty">Nenhum produto adicionado ainda</p>';
+         echo '<p class="empty">Nenhum Livro adicionado ainda</p>';
       }
       ?>
 
@@ -140,9 +140,7 @@ if(isset($_POST['add_to_cart'])){
 
 
 
-<?php @include 'footer.php'; ?>
-
-<script src="js/script.js"></script>
+<script src="../../js/script.js"></script>
 
 </body>
 </html>

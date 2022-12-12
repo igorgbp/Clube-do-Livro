@@ -33,12 +33,9 @@ if(!isset($user_id)){
 
 <section class="heading">
     <h3>meus pedidos</h3>
-    <!-- <p> <a href="home.php">home</a> / order </p> -->
 </section>
 
 <section class="placed-orders">
-
-    <!-- <h1 class="title">placed orders</h1> -->
 
     <div class="box-container">
 
@@ -73,10 +70,7 @@ if(!isset($user_id)){
 
 
 
-
-<?php @include 'footer.php'; ?>
-
-<script src="js/script.js"></script>
+<script src="../../js/script.js"></script>
 
 </body>
 </html>

@@ -7,7 +7,7 @@ session_start();
 $user_id = $_SESSION['user_id'];
 
 if(!isset($user_id)){
-   header('location:login.php');
+    header('location:../Login/index.php');
 }
 
 ?>
@@ -46,7 +46,7 @@ if(!isset($user_id)){
 
         <div class="content">
             <h3>porque nos escolher?</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum odit voluptatum alias sed est in magni nihil nisi deleniti nostrum.</p>
+            <p>Em um mundo caótico e estressante, uma boa dose de leitura melhora o seu dia. O Clube do Livro é a sua estante virtual rápida e acessível para todas as horas.</p>
             <a href="../Shop/index.php" class="btn">comprar agora</a>
         </div>
 
@@ -56,7 +56,7 @@ if(!isset($user_id)){
 
         <div class="content">
             <h3>O que nós oferecemos?</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum odit voluptatum alias sed est in magni nihil nisi deleniti nostrum.</p>
+            <p>Com a praticidade do nosso dia a dia, o Clube do Livro leva a leitura com mais facilidade para mais perto de você.</p>
             <a href="../Contato/index.php" class="btn">contate-nos</a>
         </div>
 
@@ -74,9 +74,9 @@ if(!isset($user_id)){
 
         <div class="content">
             <h3>Quem nós somos?</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum odit voluptatum alias sed est in magni nihil nisi deleniti nostrum.</p>
-            <a href="https://www.instagram.com/igor.gbp" class="btn">reviews de clientes </a>
-            <div id="user-btn" class="fas fa-instagram"></div>
+            <p>Fundada em dezembro de 2022 em São João Evangelista, o clube do livro é uma loja virtual voltada a compra e vendas de livro on-line.</p>
+            <a href="https://www.instagram.com/igor.gbp" class="btn">instagram</a>
+            
         </div>
 
     </div>
@@ -85,13 +85,13 @@ if(!isset($user_id)){
 
 <section class="reviews" id="reviews">
 
-    <h1 class="title">client's reviews</h1>
+    <h1 class="title">Reviews de clientes</h1>
 
     <div class="box-container">
 
         <div class="box">
-            <img src="images/pic-1.png" alt="">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia animi consequatur nostrum cumque itaque ducimus, iure expedita voluptates. Minima, minus.</p>
+            <img src="../../images/rick.jpg" alt="">
+            <p>“Ótimo site, rápido e seguro. Cumpre o que promete”</p>
             <div class="stars">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -99,38 +99,38 @@ if(!isset($user_id)){
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star-half-alt"></i>
             </div>
-            <h3>john deo</h3>
+            <h3>Rick Dalton</h3>
         </div>
 
         <div class="box">
-            <img src="images/pic-2.png" alt="">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia animi consequatur nostrum cumque itaque ducimus, iure expedita voluptates. Minima, minus.</p>
+            <img src="../../images/bond.jpg" alt="">
+            <p>“Muito bom o site, rápido e fácil de mexer. É acessível”</p>
             <div class="stars">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
+                <i class="fas fa-star"></i>
             </div>
-            <h3>john deo</h3>
+            <h3>James Bond</h3>
         </div>
 
         <div class="box">
-            <img src="images/pic-3.png" alt="">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia animi consequatur nostrum cumque itaque ducimus, iure expedita voluptates. Minima, minus.</p>
+            <img src="../../images/jhonny.jpeg" alt="">
+            <p>"Como um amante pela leitura e pela sensação de entrar em livrarias, esse site é de longe a melhor livraria virtual de todos os tempos. Rápido e prático e confortável para leitura”</p>
             <div class="stars">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
+                <i class="fas fa-star"></i>
             </div>
-            <h3>john deo</h3>
+            <h3>Jhonny Depp</h3>
         </div>
 
         <div class="box">
-            <img src="images/pic-4.png" alt="">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia animi consequatur nostrum cumque itaque ducimus, iure expedita voluptates. Minima, minus.</p>
+            <img src="../../images/nemo.png" alt="">
+            <p>“Bom o site, o Clube do livro superou minhas expectativas. Difícil encontrar um site bom assim voltado a leitura”</p>
             <div class="stars">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -138,33 +138,32 @@ if(!isset($user_id)){
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star-half-alt"></i>
             </div>
-            <h3>john deo</h3>
+            <h3>Nemo Nobody</h3>
         </div>
 
         <div class="box">
-            <img src="images/pic-5.png" alt="">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia animi consequatur nostrum cumque itaque ducimus, iure expedita voluptates. Minima, minus.</p>
+            <img src="../../images/scott.jpg" alt="">
+            <p>“Muito bem desenvolvido e completo o site. Recomendo muito pra quem gosta de ler muito”</p>
             <div class="stars">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
             </div>
-            <h3>john deo</h3>
+            <h3>Scott Pilgrim</h3>
         </div>
 
         <div class="box">
-            <img src="images/pic-6.png" alt="">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia animi consequatur nostrum cumque itaque ducimus, iure expedita voluptates. Minima, minus.</p>
+            <img src="../../images/ramona.png" alt="">
+            <p>“Quem diria que neste sistema teria um site tão bom assim grátis.”|</p>
             <div class="stars">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
+                
                 <i class="fas fa-star-half-alt"></i>
             </div>
-            <h3>john deo</h3>
+            <h3>Ramona Flowers</h3>
         </div>
 
     </div>
@@ -181,9 +180,8 @@ if(!isset($user_id)){
 
 
 
-<?php @include 'footer.php'; ?>
 
-<script src="js/script.js"></script>
+<script src="../../js/script.js"></script>
 
 </body>
 </html>

@@ -22,12 +22,12 @@ if(isset($_POST['add_to_wishlist'])){
     $check_cart_numbers = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
 
     if(mysqli_num_rows($check_wishlist_numbers) > 0){
-        $message[] = 'already added to wishlist';
+        $message[] = 'Livro já está na Wishlist';
     }elseif(mysqli_num_rows($check_cart_numbers) > 0){
-        $message[] = 'already added to cart';
+        $message[] = 'Livro já está no carrinho';
     }else{
         mysqli_query($conn, "INSERT INTO `wishlist`(user_id, pid, name, price, image) VALUES('$user_id', '$product_id', '$product_name', '$product_price', '$product_image')") or die('query failed');
-        $message[] = 'product added to wishlist';
+        $message[] = 'Livro adicionado na Wishlist';
     }
 
 }
@@ -43,7 +43,7 @@ if(isset($_POST['add_to_cart'])){
     $check_cart_numbers = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
 
     if(mysqli_num_rows($check_cart_numbers) > 0){
-        $message[] = 'already added to cart';
+        $message[] = 'Livro já está no carrinho';
     }else{
 
         $check_wishlist_numbers = mysqli_query($conn, "SELECT * FROM `wishlist` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
@@ -53,7 +53,7 @@ if(isset($_POST['add_to_cart'])){
         }
 
         mysqli_query($conn, "INSERT INTO `cart`(user_id, pid, name, price, quantity, image) VALUES('$user_id', '$product_id', '$product_name', '$product_price', '$product_quantity', '$product_image')") or die('query failed');
-        $message[] = 'product added to cart';
+        $message[] = 'Livro adicionado ao carrinho';
     }
 
 }
@@ -66,7 +66,7 @@ if(isset($_POST['add_to_cart'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>pesquisa</title>
+   <title>Busca</title>
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -80,13 +80,13 @@ if(isset($_POST['add_to_cart'])){
 <?php @include '../../Header/index.php'; ?>
 
 <section class="heading">
-    <h3>pesquisa</h3>
+    <h3>Busca</h3>
 </section>
 
 <section class="search-form">
     <form action="" method="POST">
-        <input type="text" class="box" placeholder="Busque produtos.." name="search_box">
-        <input type="submit" class="btn" value="search" name="search_btn">
+        <input type="text" class="box" placeholder="Pesquise por Livros.." name="search_box">
+        <input type="submit" class="btn" value="Pesquisar" name="search_btn">
     </form>
 </section>
 
@@ -117,10 +117,10 @@ if(isset($_POST['add_to_cart'])){
       <?php
          }
             }else{
-                echo '<p class="empty">no result found!</p>';
+                echo '<p class="empty">Nenhum resultado encontrado</p>';
             }
         }else{
-            echo '<p class="empty">search something!</p>';
+            echo '<p class="empty">Digite algo para pesquisar</p>';
         }
       ?>
 
@@ -131,10 +131,7 @@ if(isset($_POST['add_to_cart'])){
 
 
 
-
-<?php @include 'footer.php'; ?>
-
-<script src="js/script.js"></script>
+<script src="../../js/script.js"></script>
 
 </body>
 </html>

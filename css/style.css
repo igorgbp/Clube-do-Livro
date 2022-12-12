@@ -14,7 +14,7 @@
    --white:#fff;
    --whiteDark:rgb(204, 194, 214);
    --borderRadius: 10px;
-
+   --red:#ec5454;
    --smallfont:1.4rem;
    /*
    --pink:#e84393;
@@ -76,8 +76,10 @@ section{
    top:0;
    margin:0 auto;
    max-width: 1200px;
-   background-color: var(--light-bg);
+   background-color: var(--primaryLight);
+   color: #FFF;
    display: flex;
+   border-radius: var(--borderRadius);
    align-items: center;
    padding:2rem;
    gap:1.5rem;
@@ -86,13 +88,12 @@ section{
 }
 
 .message span{
-   color:var(--black);
    font-size: 2rem;
 }
 
 .message i{
    font-size: 2.5rem;
-   color:var(--red);
+   color:var(--white);
    cursor: pointer;
 }
 
@@ -145,7 +146,8 @@ section{
    border:var(--border);
    box-shadow: var(--box-shadow);
    text-align: center;
-   background-color: var(--white);
+   background-color: var(--primaryLight);
+   color: var(--whiteDark);
    border-radius: .5rem;
    text-transform: capitalize;
 }
@@ -335,7 +337,7 @@ section{
 .header .flex .account-box{
    position: absolute;
    top:120%; right:2rem;
-   background-color: var(--white);
+   background-color: var(--primaryLight);
    border:var(--border);
    text-align: center;
    box-shadow: var(--box-shadow);
@@ -353,12 +355,12 @@ section{
 .header .flex .account-box p{
    padding-bottom: 1rem;
    font-size: 2rem;
-   color:var(--shadeLetters);
+   color:var(--white);
    line-height: 1.5;
 }
 
 .header .flex .account-box p span{
-   color:var(--pink);
+   color:var(--alternativeDark);
 }
 
 .header .flex .account-box .delete-btn{
@@ -405,13 +407,13 @@ section{
    margin:1rem auto;
    line-height:2;
    font-size: 1.7rem;
-   color:var(--primary);
+   color:var(--white);
    background-color: var(--secondary);
    border-radius: var(--borderRadius);
 
 }
 
-.products .box-container{
+.produtos .box-container{
    max-width: 1200px;
    margin:0 auto;
    display: grid;
@@ -421,11 +423,11 @@ section{
    justify-content: center;
 }
 
-.products .title {
+.produtos .title {
    color: var(--secondary);
 }
 
-.products .box-container .box{
+.produtos .box-container .box{
    background-color: var(--cardColor);
    /* border:var(--border); */
    /* box-shadow: var(--box-shadow); */
@@ -435,20 +437,20 @@ section{
    position: relative;
 }
 
-.products .box-container .box .image{
+.produtos .box-container .box .image{
    height: 35rem;
    width: 100%;
    object-fit:contain;
 }
 
-.products .box-container .box .fa-eye,
-.products .box-container .box .price{
+.produtos .box-container .box .fa-eye,
+.produtos .box-container .box .price{
    position: absolute;
    top:1rem;
    border-radius: var(--borderRadius);
 }
 
-.products .box-container .box .price{
+.produtos .box-container .box .price{
    font-size: 2rem;
    padding:1rem;
    background-color: var(--secondary);
@@ -456,7 +458,7 @@ section{
    left:1rem;
 }
 
-.products .box-container .box .fa-eye{
+.produtos .box-container .box .fa-eye{
    right:1rem;
    height: 4.5rem;
    width: 4.5rem;
@@ -467,18 +469,18 @@ section{
    /* border:var(--border); */
 }
 
-.products .box-container .box .fa-eye:hover{
+.produtos .box-container .box .fa-eye:hover{
    background-color: var(--white);
    color:var(--black);
 }
 
-.products .box-container .box .name{
+.produtos .box-container .box .name{
    margin:1rem;
    font-size: 2rem;
    color:var(--white);
 }
 
-.products .box-container .box .qty{
+.produtos .box-container .box .qty{
    width: 40%;
    padding:1.2rem 1.4rem;
    font-size: var(--smallfont);
@@ -488,11 +490,11 @@ section{
    border-radius: var(--borderRadius);
    margin:.5rem 0;
 }
-.products .box-container .box .addCartContainer{
+.produtos .box-container .box .addCartContainer{
    flex-direction: row;
 }
 
-.products .box-container .box .btnCart{
+.produtos .box-container .box .btnCart{
    max-width: 60rem;
    margin:1rem auto;
    line-height:2;
@@ -502,7 +504,7 @@ section{
    border-radius: var(--borderRadius);
 
 }
-.products .box-container .box .option-btn{
+.produtos .box-container .box .option-btn{
    width: 100%;
 }
 
@@ -513,10 +515,13 @@ section{
    border:var(--border);
    box-shadow: var(--border);
    border-radius: .5rem;
-   background-color: var(--white);
+   background-color: var(--cardColorSecundary);
    margin:0 auto;
 }
 
+.quick-view .title{
+  color: var(--white);
+}
 .quick-view form .image{
    height: 33rem;
    border:var(--border);
@@ -526,19 +531,20 @@ section{
 .quick-view form .name{
    margin:1rem 0;
    font-size: 2rem;
-   color:var(--black);
+   color:var(--white);
 }
 
 .quick-view form .price{
-   color:var(--red);
+   color:var(--secondary);
    font-size: 2.5rem;
    padding:.5rem 0;
+   font-weight: bold;
 }
 
 .quick-view form .details{
    padding:1rem 0;
    font-size: 1.5rem;
-   color:var(--light-color);
+   color:var(--whiteDark);
    line-height: 2;
 }
 
@@ -546,7 +552,8 @@ section{
    width: 100%;
    padding:1.2rem 1.4rem;
    font-size: 1.8rem;
-   color:var(--black);
+   color:var(--white);
+   background-color: var(--cardColor);
    border-radius: .5rem;
    border:var(--border);
    margin:.5rem 0;
@@ -608,7 +615,7 @@ section{
    text-transform: capitalize;
    color:var(--secondary);
 }
-.about .flex .content .fa-user,
+.about .flex .content .fa-logout,
 
 .about .flex .content p{
    padding:1rem 0;
@@ -632,10 +639,14 @@ section{
    justify-content: center;
 }
 
+.reviews .title{
+   color: #FFF;
+}
+
 .reviews .box-container .box{
    padding:2rem;
    text-align: center;
-   background-color: var(--white);
+   background-color: var(--cardColorSecundary);
    box-shadow: var(--box-shadow);
    border:var(--border);
    border-radius: .5rem;
@@ -644,13 +655,14 @@ section{
 .reviews .box-container .box img{
    height: 10rem;
    width: 10rem;
+   
    border-radius: 50%;
 }
 
 .reviews .box-container .box p{
    padding:1rem 0;
    font-size: 1.5rem;
-   color:var(--light-color);
+   color:var(--whiteDark);
    line-height: 2;
 }
 
@@ -663,20 +675,20 @@ section{
 }
 
 .reviews .box-container .box .stars i{
-   color:var(--orange);
+   color:var(--white);
    font-size: 1.7rem;
    margin:0 .3rem;
 }
 
 .reviews .box-container .box h3{
    font-size: 2rem;
-   color:var(--black);
+   color:var(--white);
    margin-top: 1rem;
 }
 
 .contact form{
    max-width: 50rem;
-   background-color: var(--white);
+   background-color: var(--cardColorSecundary);
    border-radius: .5rem;
    box-shadow: var(--box-shadow);
    border:var(--border);
@@ -688,7 +700,7 @@ section{
 .contact form h3{
    font-size: 2.5rem;
    margin-bottom: 1rem;
-   color:var(--black);
+   color:var(--white);
    text-transform: uppercase;
 }
 
@@ -699,7 +711,7 @@ section{
    margin:1rem 0;
    padding:1.2rem 1.4rem;
    font-size: 1.8rem;
-   color:var(--black);
+   color:var(--white);
    background-color: var(--light-bg);
 }
 
@@ -719,8 +731,9 @@ section{
 .search-form form .box{
    width: 100%;
    border:var(--border);
-   background-color: var(--white);
+   background-color: var(--cardColorSecundary);
    box-shadow: var(--box-shadow);
+   color: #FFF;
    padding:1.2rem 1.4rem;
    font-size: 1.8rem;
    border-radius: .5rem;
@@ -740,10 +753,14 @@ section{
    justify-content: center;
 }
 
+.wishlist .title{
+   color: var(--white);
+}
+
 .wishlist .box-container .box{
    padding:2rem;
    text-align: center;
-   background-color: var(--white);
+   background-color: var(--cardColorSecundary);
    border:var(--border);
    box-shadow: var(--box-shadow);
    border-radius: .5rem;
@@ -805,7 +822,7 @@ section{
    margin:0 auto;
    padding:2rem;
    text-align: center;
-   background-color: var(--white);
+   background-color: var(--primaryLight);
    border:var(--border);
    box-shadow: var(--box-shadow);
    border-radius: .5rem;
@@ -814,7 +831,7 @@ section{
 
 .wishlist .wishlist-total p{
    font-size: 2.5rem;
-   color:var(--light-color);
+   color:var(--white);
    margin-bottom: 1rem;
 }
 
@@ -1143,14 +1160,7 @@ section{
       border-bottom: var(--border);
       clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
    }
-   .header .flex .icons{
-      position: absolute;
-      top:99%; left:0; right:0;
-      background-color: var(--white);
-      border-top: var(--border);
-      border-bottom: var(--border);
-      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-   }
+   
 
    .header .flex .navbar.active{
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);

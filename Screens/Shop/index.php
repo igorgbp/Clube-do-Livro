@@ -7,7 +7,7 @@ session_start();
 $user_id = $_SESSION['user_id'];
 
 if(!isset($user_id)){
-   header('location:login.php');
+   header('location:../Login/index.php');
 };
 
 if(isset($_POST['add_to_wishlist'])){
@@ -22,12 +22,12 @@ if(isset($_POST['add_to_wishlist'])){
     $check_cart_numbers = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
 
     if(mysqli_num_rows($check_wishlist_numbers) > 0){
-        $message[] = 'already added to wishlist';
+        $message[] = 'Livro já está na wishlist';
     }elseif(mysqli_num_rows($check_cart_numbers) > 0){
         $message[] = 'already added to cart';
     }else{
         mysqli_query($conn, "INSERT INTO `wishlist`(user_id, pid, name, price, image) VALUES('$user_id', '$product_id', '$product_name', '$product_price', '$product_image')") or die('query failed');
-        $message[] = 'product added to wishlist';
+        $message[] = 'Livro adicionado a wishlist';
     }
 
 }
@@ -43,7 +43,7 @@ if(isset($_POST['add_to_cart'])){
     $check_cart_numbers = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
 
     if(mysqli_num_rows($check_cart_numbers) > 0){
-        $message[] = 'already added to cart';
+        $message[] = 'Livro já está no carrinho';
     }else{
 
         $check_wishlist_numbers = mysqli_query($conn, "SELECT * FROM `wishlist` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
@@ -53,7 +53,7 @@ if(isset($_POST['add_to_cart'])){
         }
 
         mysqli_query($conn, "INSERT INTO `cart`(user_id, pid, name, price, quantity, image) VALUES('$user_id', '$product_id', '$product_name', '$product_price', '$product_quantity', '$product_image')") or die('query failed');
-        $message[] = 'product added to cart';
+        $message[] = 'Livro adicionado ao carrinho';
     }
 }
 
@@ -74,13 +74,12 @@ if(isset($_POST['add_to_cart'])){
 <?php @include '../../Header/index.php'; ?>
 
 <section class="heading">
-    <h3>our shop</h3>
-    <!-- <p> <a href="home.php">home</a> / shop </p> -->
+    <h3>Nossa Loja</h3>
 </section>
 
-<section class="products">
+<section class="produtos">
 
-   <h1 class="title">latest products</h1>
+   <h1 class="title">Novos Livros</h1>
 
    <div class="box-container">
 
@@ -90,7 +89,7 @@ if(isset($_POST['add_to_cart'])){
             while($fetch_products = mysqli_fetch_assoc($select_products)){
       ?>
       <form action="" method="POST" class="box">
-         <a href="view_page.php?pid=<?php echo $fetch_products['id']; ?>" class="fas fa-eye"></a>
+         <a href="../Produtopag/index.php?pid=<?php echo $fetch_products['id']; ?>" class="fas fa-eye"></a>
          <div class="price">R$ <?php echo $fetch_products['price']; ?></div>
          <img src="../../product images/<?php echo $fetch_products['image']; ?>" alt="" class="image">
          <div class="name"><?php echo $fetch_products['name']; ?></div>
@@ -99,13 +98,13 @@ if(isset($_POST['add_to_cart'])){
          <input type="hidden" name="product_name" value="<?php echo $fetch_products['name']; ?>">
          <input type="hidden" name="product_price" value="<?php echo $fetch_products['price']; ?>">
          <input type="hidden" name="product_image" value="<?php echo $fetch_products['image']; ?>">
-         <input type="submit" value="add to wishlist" name="add_to_wishlist" class="option-btn">
-         <input type="submit" value="add to cart" name="add_to_cart" class="btn">
+         <input type="submit" value="adicionar a wishlist" name="add_to_wishlist" class="option-btn">
+         <input type="submit" value="adicionar ao carrinho" name="add_to_cart" class="btn">
       </form>
       <?php
          }
       }else{
-         echo '<p class="empty">no products added yet!</p>';
+         echo '<p class="empty">Nenhum livro adicionado ainda</p>';
       }
       ?>
 
@@ -118,9 +117,8 @@ if(isset($_POST['add_to_cart'])){
 
 
 
-<?php @include 'footer.php'; ?>
 
-<script src="js/script.js"></script>
+<script src="../../js/script.js"></script>
 
 </body>
 </html>

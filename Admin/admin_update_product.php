@@ -22,21 +22,21 @@ if(isset($_POST['update_product'])){
    $image = $_FILES['image']['name'];
    $image_size = $_FILES['image']['size'];
    $image_tmp_name = $_FILES['image']['tmp_name'];
-   $image_folter = 'uploaded_img/'.$image;
+   $image_folter = '../product images'.$image;
    $old_image = $_POST['update_p_image'];
    
    if(!empty($image)){
       if($image_size > 2000000){
-         $message[] = 'image file size is too large!';
+         $message[] = 'imagem muito grande';
       }else{
          mysqli_query($conn, "UPDATE `products` SET image = '$image' WHERE id = '$update_p_id'") or die('query failed');
          move_uploaded_file($image_tmp_name, $image_folter);
          unlink('uploaded_img/'.$old_image);
-         $message[] = 'image updated successfully!';
+         $message[] = 'imagem atualizada com sucesso';
       }
    }
 
-   $message[] = 'product updated successfully!';
+   $message[] = 'Livro atualizado com sucesso';
 
 }
 
@@ -48,7 +48,7 @@ if(isset($_POST['update_product'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>update product</title>
+   <title>Atualizar produto</title>
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -79,14 +79,14 @@ if(isset($_POST['update_product'])){
    <input type="number" min="0" class="box" value="<?php echo $fetch_products['price']; ?>" required placeholder="update product price" name="price">
    <textarea name="details" class="box" required placeholder="update product details" cols="30" rows="10"><?php echo $fetch_products['details']; ?></textarea>
    <input type="file" accept="image/jpg, image/jpeg, image/png" class="box" name="image">
-   <input type="submit" value="update product" name="update_product" class="btn">
-   <a href="admin_products.php" class="option-btn">go back</a>
+   <input type="submit" value="Atualizar livro" name="update_product" class="btn">
+   <a href="admin_products.php" class="option-btn">Voltar</a>
 </form>
 
 <?php
       }
    }else{
-      echo '<p class="empty">no update product select</p>';
+      echo '<p class="empty">Nenhum livro selecionado</p>';
    }
 ?>
 
@@ -104,7 +104,7 @@ if(isset($_POST['update_product'])){
 
 
 
-<script src="js/admin_script.js"></script>
+<script src="../js/admin_script.js"></script>
 
 </body>
 </html>

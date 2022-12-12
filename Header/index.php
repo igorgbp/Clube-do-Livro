@@ -41,13 +41,13 @@ if(isset($message)){
         <div class="icons">
             <div id="menu-btn" class="fas fa-bars"></div>
             <a href="../Pesquisa/index.php" class="fas fa-search"></a>
-            <a href="../../phpDocs/logout.php"> <div id="user-btn" class="fas fa-user"> </div></a>
+            <!-- <a href="../../phpDocs/logout.php"> <div id="user-btn" class="fas fa-user"> </div></a> -->
+            <div id="user-btn" class="fas fa-user"></div>
             <?php
                 $select_wishlist_count = mysqli_query($conn, "SELECT * FROM `wishlist` WHERE user_id = '$user_id'") or die('query failed');
                 $wishlist_num_rows = mysqli_num_rows($select_wishlist_count);
             ?>
             <a href="../Wishlist/index.php"><i class="fas fa-heart"></i>
-            <!-- <span><?php echo $wishlist_num_rows; ?></span> -->
         </a>
             <?php
                 $select_cart_count = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
@@ -56,11 +56,14 @@ if(isset($message)){
             <a href="../Carrinho/index.php"><i class="fas fa-shopping-cart"></i><span><?php echo $cart_num_rows; ?></span></a>
         </div>
 
+       
+
         <div class="account-box">
-            <p>username : <span><?php echo $_SESSION['user_name']; ?></span></p>
-            <p>email : <span><?php echo $_SESSION['user_email']; ?></span></p>
-            <a href="../../phpDocs/logout.php" class="delete-btn">logout</a>
-        </div>
+         <p>username : <span><?php echo $_SESSION['user_name']; ?></span></p>
+         <p>email : <span><?php echo $_SESSION['user_email']; ?></span></p>
+         <a href="../../phpDocs/logout.php" class="delete-btn">Sair</a>
+         <!-- <div>new <a href="login.php">login</a> | <a href="register.php">register</a> </div> -->
+      </div>
 
     </div>
 

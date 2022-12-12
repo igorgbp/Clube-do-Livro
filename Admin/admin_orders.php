@@ -14,7 +14,7 @@ if(isset($_POST['update_order'])){
    $order_id = $_POST['order_id'];
    $update_payment = $_POST['update_payment'];
    mysqli_query($conn, "UPDATE `orders` SET payment_status = '$update_payment' WHERE id = '$order_id'") or die('query failed');
-   $message[] = 'payment status has been updated!';
+   $message[] = 'pagamento foi atualizado';
 }
 
 if(isset($_GET['delete'])){
@@ -46,7 +46,7 @@ if(isset($_GET['delete'])){
 
 <section class="placed-orders">
 
-   <h1 class="title">placed orders</h1>
+   <h1 class="title">Pedidos</h1>
 
    <div class="box-container">
 
@@ -57,30 +57,30 @@ if(isset($_GET['delete'])){
          while($fetch_orders = mysqli_fetch_assoc($select_orders)){
       ?>
       <div class="box">
-         <p> user id : <span><?php echo $fetch_orders['user_id']; ?></span> </p>
-         <p> placed on : <span><?php echo $fetch_orders['placed_on']; ?></span> </p>
-         <p> name : <span><?php echo $fetch_orders['name']; ?></span> </p>
-         <p> number : <span><?php echo $fetch_orders['number']; ?></span> </p>
-         <p> email : <span><?php echo $fetch_orders['email']; ?></span> </p>
-         <p> address : <span><?php echo $fetch_orders['address']; ?></span> </p>
-         <p> total products : <span><?php echo $fetch_orders['total_products']; ?></span> </p>
-         <p> total price : <span>$<?php echo $fetch_orders['total_price']; ?>/-</span> </p>
-         <p> payment method : <span><?php echo $fetch_orders['method']; ?></span> </p>
+         <p> id usuario: <span><?php echo $fetch_orders['user_id']; ?></span> </p>
+         <p> data: <span><?php echo $fetch_orders['placed_on']; ?></span> </p>
+         <p> nome: <span><?php echo $fetch_orders['name']; ?></span> </p>
+         <p> número: <span><?php echo $fetch_orders['number']; ?></span> </p>
+         <p> email: <span><?php echo $fetch_orders['email']; ?></span> </p>
+         <p> endereço: <span><?php echo $fetch_orders['address']; ?></span> </p>
+         <p> produtos: <span><?php echo $fetch_orders['total_products']; ?></span> </p>
+         <p> preço total: <span>R$ <?php echo $fetch_orders['total_price']; ?></span> </p>
+         <p> meio de pagamento: <span><?php echo $fetch_orders['method']; ?></span> </p>
          <form action="" method="post">
             <input type="hidden" name="order_id" value="<?php echo $fetch_orders['id']; ?>">
             <select name="update_payment">
                <option disabled selected><?php echo $fetch_orders['payment_status']; ?></option>
-               <option value="pending">pending</option>
-               <option value="completed">completed</option>
+               <option value="pendente">pendente</option>
+               <option value="completo">completo</option>
             </select>
             <input type="submit" name="update_order" value="update" class="option-btn">
-            <a href="admin_orders.php?delete=<?php echo $fetch_orders['id']; ?>" class="delete-btn" onclick="return confirm('delete this order?');">delete</a>
+            <a href="admin_orders.php?delete=<?php echo $fetch_orders['id']; ?>" class="delete-btn" onclick="return confirm('Deletar este pedido?');">Deletar</a>
          </form>
       </div>
       <?php
          }
       }else{
-         echo '<p class="empty">no orders placed yet!</p>';
+         echo '<p class="empty">Nenhum pedido ainda</p>';
       }
       ?>
    </div>
@@ -99,7 +99,7 @@ if(isset($_GET['delete'])){
 
 
 
-<script src="js/admin_script.js"></script>
+<script src="../js/admin_script.js"></script>
 
 </body>
 </html>
