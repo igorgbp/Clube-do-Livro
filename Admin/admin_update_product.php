@@ -37,6 +37,7 @@ if(isset($_POST['update_product'])){
    }
 
    $message[] = 'Livro atualizado com sucesso';
+   // header('location:admin_products.php')
 
 }
 

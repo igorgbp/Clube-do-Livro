@@ -70,8 +70,8 @@ if(isset($_GET['delete'])){
             <input type="hidden" name="order_id" value="<?php echo $fetch_orders['id']; ?>">
             <select name="update_payment">
                <option disabled selected><?php echo $fetch_orders['payment_status']; ?></option>
-               <option value="pendente">pendente</option>
-               <option value="completo">completo</option>
+               <option value="Pendente">Pendente</option>
+               <option value="Finalizado">Finalizado</option>
             </select>
             <input type="submit" name="update_order" value="update" class="option-btn">
             <a href="admin_orders.php?delete=<?php echo $fetch_orders['id']; ?>" class="delete-btn" onclick="return confirm('Deletar este pedido?');">Deletar</a>

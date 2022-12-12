@@ -53,7 +53,7 @@ if(!isset($user_id)){
         <p> <span class='dataTitle'>Meio de pagamento: </span><span><?php echo $fetch_orders['method']; ?></span> </p>
         <p> <span class='dataTitle'>meus pedidos: </span><span><?php echo $fetch_orders['total_products']; ?></span> </p>
         <p> <span class='dataTitle'>Valor total: </span><span>R$ <?php echo $fetch_orders['total_price']; ?></span> </p>
-        <p> <span class='dataTitle'>Status do pagamento: </span><span style="color:<?php if($fetch_orders['payment_status'] == 'pendente'){echo 'tomato'; }else{echo 'lightgreen';} ?>"><?php echo $fetch_orders['payment_status']; ?></span> </p>
+        <p> <span class='dataTitle'>Status do pagamento: </span><span style="color:<?php if($fetch_orders['payment_status'] == 'Pendente'){echo 'tomato'; }else{echo 'lightgreen';} ?>"><?php echo $fetch_orders['payment_status']; ?></span> </p>
     </div>
     <?php
         }
