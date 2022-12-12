@@ -41,7 +41,7 @@ if(isset($message)){
         <div class="icons">
             <div id="menu-btn" class="fas fa-bars"></div>
             <a href="../Pesquisa/index.php" class="fas fa-search"></a>
-            <div id="user-btn" class="fas fa-user"></div>
+            <a href="../../phpDocs/logout.php"> <div id="user-btn" class="fas fa-user"> </div></a>
             <?php
                 $select_wishlist_count = mysqli_query($conn, "SELECT * FROM `wishlist` WHERE user_id = '$user_id'") or die('query failed');
                 $wishlist_num_rows = mysqli_num_rows($select_wishlist_count);

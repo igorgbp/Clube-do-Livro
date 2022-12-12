@@ -16,9 +16,10 @@ if(isset($_POST['add_product'])){
    $price = mysqli_real_escape_string($conn, $_POST['price']);
    $details = mysqli_real_escape_string($conn, $_POST['details']);
    $image = $_FILES['image']['name'];
+   var_dump($image);
    $image_size = $_FILES['image']['size'];
    $image_tmp_name = $_FILES['image']['tmp_name'];
-   $image_folter = 'uploaded_img/'.$image;
+   $image_folter = '../product images/'.$image;
 
    $select_product_name = mysqli_query($conn, "SELECT name FROM `products` WHERE name = '$name'") or die('query failed');
 
@@ -97,7 +98,7 @@ if(isset($_GET['delete'])){
       ?>
       <div class="box">
          <div class="price">$<?php echo $fetch_products['price']; ?>/-</div>
-         <img class="image" src="uploaded_img/<?php echo $fetch_products['image']; ?>" alt="">
+         <img class="image" src="../product images/<?php echo $fetch_products['image']; ?>" alt="">
          <div class="name"><?php echo $fetch_products['name']; ?></div>
          <div class="details"><?php echo $fetch_products['details']; ?></div>
          <a href="admin_update_product.php?update=<?php echo $fetch_products['id']; ?>" class="option-btn">update</a>

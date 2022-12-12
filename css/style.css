@@ -12,6 +12,7 @@
    --cardColor:#4b305e;
    --cardColorSecundary:#603f77;
    --white:#fff;
+   --whiteDark:rgb(204, 194, 214);
    --borderRadius: 10px;
 
    --smallfont:1.4rem;
@@ -127,13 +128,14 @@ section{
 }
 
 .option-btn{
-   background-color: var(--alternativeDark);
+   background-color: var(--cardColorSecundary);
 }
 
 .btn:hover,
 .delete-btn:hover,
 .option-btn:hover{
-   background-color: var(--black);
+   background-color: var(--white);
+   color: var(--black);
 }
 
 .empty{
@@ -466,8 +468,8 @@ section{
 }
 
 .products .box-container .box .fa-eye:hover{
-   background-color: var(--alternativeLight);
-   color:var(--alternativeDark);
+   background-color: var(--white);
+   color:var(--black);
 }
 
 .products .box-container .box .name{
@@ -551,7 +553,7 @@ section{
 }
 
 .home-contact{
-   background-color: var(--black);
+   background-color: var(--primaryLight);
    text-align: center;
 }
 
@@ -569,7 +571,7 @@ section{
 .home-contact .content p{
    line-height: 2;
    font-size: 1.5rem;
-   color:var(--light-white);
+   color:var(--white);
    padding:1rem 0;
 }
 
@@ -957,7 +959,7 @@ section{
 .display-order .grand-total{
    margin-top: 2rem;
    font-size: 2.5rem;
-   color:var(--light-color);
+   color:var(--white);
 }
 
 .display-order .grand-total span{
@@ -965,7 +967,7 @@ section{
 }
 
 .checkout form{
-   background-color: var(--white);
+   background-color: var(--cardColorSecundary);
    border:var(--border);
    max-width: 1200px;
    margin:0 auto;
@@ -993,6 +995,7 @@ section{
 
 .checkout form .flex .inputBox{
    flex:1 1 40rem;
+   color: var(--white);
 }
 
 .checkout form .flex .inputBox input,
@@ -1022,7 +1025,7 @@ section{
 }
 
 .placed-orders .box-container .box{
-   background-color: var(--white);
+   background-color: var(--cardColorSecundary);
    padding:1rem 2rem;
    border:var(--border);
    box-shadow: var(--box-shadow);
@@ -1031,10 +1034,17 @@ section{
 }
 
 .placed-orders .box-container .box p{
-   margin: 1rem 0;
-   font-size: 2rem;
+   margin: 0.2rem 0;
+   font-size: 1.7rem;
    line-height: 1.5;
-   color:var(--light-color);
+   color:var(--whiteDark);
+}
+.placed-orders .box-container .box .dataTitle{
+   margin: 1rem 0;
+   font-size: 2.0rem;
+   font-weight: bold;
+   line-height: 1.5;
+   color:var(--white);
 }
 
 .placed-orders .box-container .box p span{
@@ -1126,6 +1136,14 @@ section{
    }
 
    .header .flex .navbar{
+      position: absolute;
+      top:99%; left:0; right:0;
+      background-color: var(--white);
+      border-top: var(--border);
+      border-bottom: var(--border);
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+   }
+   .header .flex .icons{
       position: absolute;
       top:99%; left:0; right:0;
       background-color: var(--white);
