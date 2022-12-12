@@ -31,7 +31,7 @@ if(isset($_POST['update_product'])){
       }else{
          mysqli_query($conn, "UPDATE `products` SET image = '$image' WHERE id = '$update_p_id'") or die('query failed');
          move_uploaded_file($image_tmp_name, $image_folter);
-         unlink('uploaded_img/'.$old_image);
+         unlink('../product images/'.$old_image);
          $message[] = 'imagem atualizada com sucesso';
       }
    }
@@ -72,7 +72,7 @@ if(isset($_POST['update_product'])){
 ?>
 
 <form action="" method="post" enctype="multipart/form-data">
-   <img src="uploaded_img/<?php echo $fetch_products['image']; ?>" class="image"  alt="">
+   <img src="../product images/<?php echo $fetch_products['image']; ?>" class="image"  alt="">
    <input type="hidden" value="<?php echo $fetch_products['id']; ?>" name="update_p_id">
    <input type="hidden" value="<?php echo $fetch_products['image']; ?>" name="update_p_image">
    <input type="text" class="box" value="<?php echo $fetch_products['name']; ?>" required placeholder="update product name" name="name">

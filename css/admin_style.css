@@ -23,7 +23,6 @@
 
 
 
-   --orange:#f39c12;
    --black:#333;
    --white:#fff;
    --light-color:#666;
@@ -376,6 +375,7 @@ section{
    max-width: 50rem;
    border-radius: .5rem;
    background-color: var(--cardColor);
+color: #FFF;
    border:var(--border);
    padding:2rem;
    text-align: center;
@@ -394,7 +394,7 @@ section{
    width: 100%;
    margin:1rem 0;
    font-size: 1.8rem;
-   color:var(--black);
+   color:var(--white);
    border-radius: .5rem;
    background-color: var(--primary);
    padding:1.2rem 1.4rem;
