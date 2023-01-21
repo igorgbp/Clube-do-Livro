@@ -58,7 +58,7 @@ if(isset($_POST['submit'])){
 <body>
     <div class="center">
         <div class="pic">
-            <img src="../../images/store.gif" class="image" sizes="contain">
+            <img src="../../images/gifcad.gif" class="image" sizes="contain">
 
         </div>
         <div class="logindata">

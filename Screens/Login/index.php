@@ -76,7 +76,7 @@ if(isset($_POST['submit'])){
 
     <div class="center">
         <div class="pic">
-            <img src="../../images/store_2.gif" class="image" sizes="contain">
+            <img src="../../images/giflogin.gif" class="image" sizes="contain">
 
         </div>
         <div class="logindata">
@@ -118,7 +118,7 @@ if(isset($message)){
 }
 ?>
                 <div class="signup_link">
-                    Não tem uma conta? <a href="../Cadastro/index.php" class="back">Cadastar-se</a>
+                    Não tem uma conta? <a href="../Cadastro/index.php" class="back">Cadastre-se</a>
                 </div>
         </div>
 

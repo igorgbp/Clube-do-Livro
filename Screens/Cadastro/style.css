@@ -20,11 +20,12 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 70%;
-    background: rgb(44, 41, 51);
+    background: rgb(70, 0, 233);
     border-radius: 10px;
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
     display: flex;
     justify-content: center;
+    padding: 50px;
 }
 
 .center h1 {
